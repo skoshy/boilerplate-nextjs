@@ -1,0 +1,16 @@
+{
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": true,
+    "**/node_modules": false,
+    "**/bower_components": false,
+    "**/.history": true,
+    "**/tmp": true
+  },
+  "explorerExclude.backup": null
+  // "typescript.validate.enable": false // disabling this gets rid of intellisense
+}

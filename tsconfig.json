@@ -17,7 +17,7 @@
     "isolatedModules": true,
     "baseUrl": "./",
     "types": ["node", "jest"],
-    "typeRoots": ["./src/typings", "./next-env.d.ts"]
+    "typeRoots": ["./src/types", "./next-env.d.ts"]
   },
   "include": ["./next-env.d.ts", "./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": [

@@ -1,0 +1,51 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
+const withSass = require("@zeit/next-sass");
+
+const isDev = process.env.NODE_ENV === "development";
+
+module.exports = withSass({
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 2,
+    localIdentName: "[local]___[hash:base64:5]"
+  },
+
+  exportTrailingSlash: !isDev,
+
+  webpack(config) {
+    // needed to allow for root imports
+    config.resolve.modules.push(path.resolve("./"));
+
+    // add SASS global + module support - https://github.com/zeit/next-plugins/issues/149#issuecomment-526881653
+    config.module.rules.forEach(rule => {
+      if (rule.test.toString().match(/\.s[ac]ss$/)) {
+        rule.rules = rule.use.map(useRule => {
+          if (typeof useRule === "string") {
+            return { loader: useRule };
+          }
+
+          if (useRule.loader.startsWith("css-loader")) {
+            return {
+              oneOf: [
+                {
+                  test: /\.module\.s[ac]ss$/,
+                  loader: useRule.loader,
+                  options: useRule.options
+                },
+                {
+                  loader: useRule.loader,
+                  options: {}
+                }
+              ]
+            };
+          }
+          return useRule;
+        });
+        delete rule.use;
+      }
+    });
+
+    return config;
+  }
+});

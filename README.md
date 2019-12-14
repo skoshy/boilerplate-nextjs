@@ -27,6 +27,8 @@ yarn dev
 
 ### File structure
 
+For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` for global stylesheets.
+
 - `.env.example` - Example environment variable file, automatically gets used as default `.env`
 - `.npmrc` - Ensure we use exact versions when adding things to `package.json`
 - `.nvmrc` - Define the recommended node version
@@ -34,8 +36,10 @@ yarn dev
 
 ### Dependencies
 
+- `@zeit/next-sass` - Needed for SASS support with Next.js
 - `lodash` - Helper functions for common JS problems
 - `next` - Meta-framework
+- `node-sass` - Needed for SASS support
 - `react`/`react-dom` - ⚛️
 
 ### Dev Dependencies
