@@ -6,9 +6,9 @@
 # node 12+ is required, if you have nvm, simply run:
 nvm install
 
+# then, it's pretty simple
 yarn
 yarn dev
-#
 ```
 
 ## Stack
