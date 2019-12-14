@@ -1,6 +1,11 @@
 # boilerplate-nextjs
 
-## Building / running
+- [Building / Running](#build)
+- [Stack / Packages / Tools](#stack)
+
+<a name="build"></a>
+
+## Building / Running
 
 ```bash
 # node 12+ is required, if you have nvm, simply run:
@@ -10,6 +15,8 @@ nvm install
 yarn
 yarn dev
 ```
+
+<a name="stack"></a>
 
 ## Stack
 
