@@ -1,4 +1,4 @@
-# Splishy
+# boilerplate-nextjs
 
 ## Building / running
 

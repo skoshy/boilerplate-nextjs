@@ -1,7 +1,7 @@
 {
-  "name": "splishy",
+  "name": "boilerplate-nextjs",
   "version": "0.1.0",
-  "repository": "git@github.com:skoshy/splishy.git",
+  "repository": "git@github.com:skoshy/boilerplate-nextjs.git",
   "author": "Stefan Koshy <noreply@skoshy.com>",
   "scripts": {
     "build": "env-cmd gulp build",
