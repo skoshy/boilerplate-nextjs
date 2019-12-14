@@ -13,6 +13,11 @@ yarn dev
 
 ## Stack
 
+### Tools
+
+- `node >= 12` - No real reason to use Node 12 as the minimum version, but it's currently LTS so why not
+- `yarn` - I personally like yarn more than `npm`. Syntax is cleaner, installing is faster, overall is just pleasant.
+
 ### File structure
 
 - `.env.example` - Example environment variable file, automatically gets used as default `.env`
