@@ -14,6 +14,7 @@ Features:
 
 - [Building / Running](#build)
 - [Stack / Packages / Tools](#stack)
+- [Definitions](#definitions)
 
 <a name="build"></a>
 
@@ -65,3 +66,15 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 - `prettier` - Make code look nice automatically
 - `shelljs` - Cross-platform Unix commands that can be used in scripts
 - `typescript` - Types are 👍
+
+<a name="definitions"></a>
+
+## Definitions
+
+- `lib` vs `helpers`
+
+  - `lib` refers to anything that isn't specifically tied to a project. Basically, the function/constant/whatever could be pulled out and made its own separate npm package if need be.
+  - `helpers` refers to things that are specifically tied to the project in some way.
+  - For example, if you have a `generateRandomHexColor` function, it's pretty generic and not tied specifically to the project, so it'd go in _lib_.
+
+    If you have a `convertDateToApiFormat` function, it's tied to the project specifically, so it'd go in _helpers_.
