@@ -1,5 +1,17 @@
 # boilerplate-nextjs
 
+Features:
+
+- Next.js with React
+- TypeScript
+- SASS support (both global styles and CSS modules)
+- Gulp for task-running
+- ESLint with typescript-eslint and various plugins and Prettier for code-styling
+- Jest for testing
+- Fully cross-platform between macOS/Linux/Windows
+
+## Table of Contents
+
 - [Building / Running](#build)
 - [Stack / Packages / Tools](#stack)
 
