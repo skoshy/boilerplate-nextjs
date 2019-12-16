@@ -19,7 +19,7 @@ module.exports = withSass({
 
     // add SASS global + module support - https://github.com/zeit/next-plugins/issues/149#issuecomment-526881653
     config.module.rules.forEach(rule => {
-      if (rule.test.toString().match(/\.s[ac]ss$/)) {
+      if (rule.test.test(".sass") || rule.test.test(".scss")) {
         rule.rules = rule.use.map(useRule => {
           if (typeof useRule === "string") {
             return { loader: useRule };
