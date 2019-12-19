@@ -1,8 +1,11 @@
 import { cp } from "shelljs";
-import { spawn } from "./scripts/lib";
+import { spawn, getPort } from "./scripts/lib";
 
 // Runs the app
-exports.default = end => {
+exports.default = async end => {
+  // get an open port
+  process.env.PORT = await getPort(process.env.PORT);
+
   spawn("node server.js");
 
   end();
