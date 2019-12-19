@@ -1,5 +1,7 @@
 # boilerplate-nextjs
 
+Boilerplate for Next.js projects, made by [@skoshy](https://github.com/skoshy)
+
 Features:
 
 - Next.js with React
@@ -20,6 +22,10 @@ Features:
 
 ## Building / Running
 
+Currently Node 12 is required.
+
+- It's recommended to install/use [nvm](https://github.com/nvm-sh/nvm) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (Windows) to manage/switch your node versions.
+
 ```bash
 # node 12+ is required, if you have nvm, simply run:
 nvm install
@@ -36,6 +42,7 @@ yarn dev
 ### Tools
 
 - `node >= 12` - No real reason to use Node 12 as the minimum version, but it's currently LTS so why not
+- `nvm/nvm-windows` - Useful for managing multiple node versions between projects
 - `yarn` - I personally like yarn more than `npm`. Syntax is cleaner, installing is faster, overall is just pleasant.
 
 ### File structure
@@ -53,6 +60,7 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 - `lodash` - Helper functions for common JS problems
 - `next` - Meta-framework
 - `node-sass` - Needed for SASS support
+- `postinstall-postinstall` - Runs `postinstall` scripts on script removal as well. See [`postinstall-postinstall`](https://www.npmjs.com/package/postinstall-postinstall) or [`patch-package`](https://www.npmjs.com/package/patch-package) for more info
 - `react`/`react-dom` - ⚛️
 
 ### Dev Dependencies
