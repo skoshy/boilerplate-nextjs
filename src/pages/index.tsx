@@ -1,5 +1,5 @@
 import React from "react";
-import "src/styles/main.scss";
+import "src/styles/global.scss";
 import css from "./index.module.scss";
 
 const Page = () => {

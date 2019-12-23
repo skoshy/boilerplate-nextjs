@@ -33,11 +33,7 @@ module.exports = {
         allowExpressions: true
       }
     ],
-    "@typescript-eslint/camelcase": 0,
     "react/prop-types": 0,
-    // 'react/no-unused-prop-types': 0, // we keep this disabled because a proptype can be specified for use in styled-components, but not used in the actual component declaration
-    // 'react/default-props-match-prop-types': 2,
-    // 'react/require-default-props': 2,
     "import/first": 2,
     "import/newline-after-import": 2,
     "import/order": [
@@ -88,7 +84,6 @@ module.exports = {
     "no-return-assign": ["error", "except-parens"],
     "no-undef": [0], // turn off this rule because TypeScript does this for us, plus it conflicts with optional chaining working
     "import/no-default-export": [0],
-    "@typescript-eslint/class-name-casing": [0],
     "react/no-children-prop": [0], // turn this off so it doesn't conflict with things like Grommet's `children` prop
     "@typescript-eslint/explicit-function-return-type": [0], // maybe can turn back on once project is complete?
     "react/jsx-wrap-multilines": [0],
