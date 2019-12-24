@@ -17,9 +17,9 @@ exports.build = end => {
   end();
 };
 
+// this script must be idempotent, see `postinstall-postinstall` for more info
+// runs not only after installs, but after removing packages too
 exports.postInstall = end => {
-  // this script must be idempotent, see `postinstall-postinstall` for more info
-
   // Create default .env if it doesn't exist
   cp("-n", ".env.example", ".env");
 
