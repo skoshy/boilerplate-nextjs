@@ -63,6 +63,8 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 - `node-sass` - Needed for SASS support
 - `postinstall-postinstall` - Runs `postinstall` scripts on script removal as well. See [`postinstall-postinstall`](https://www.npmjs.com/package/postinstall-postinstall) or [`patch-package`](https://www.npmjs.com/package/patch-package) for more info
 - `react`/`react-dom` - ⚛️
+- `styled-components` - robust CSS-in-JS solution
+- `utility-types` - Has a lot of helper functions and utils for TypeScript
 
 ### Dev Dependencies
 
