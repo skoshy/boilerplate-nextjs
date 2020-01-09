@@ -1,7 +1,7 @@
-import React from "react";
-import { colors } from "src/styles";
-import { classnames } from "src/lib";
-import moduleCss from "./Loading.module.scss";
+import React from 'react';
+import { colors } from 'src/styles';
+import { classnames } from 'src/lib';
+import moduleCss from './Loading.module.scss';
 
 // modified from https://projects.lukehaas.me/css-loaders/
 // this component will be an example of using the `.module.scss` pattern
@@ -14,10 +14,10 @@ interface Props {
 }
 
 export const Loading = ({
-  size = "100px",
-  borderSize = "2em",
+  size = '100px',
+  borderSize = '2em',
   colorFilled = colors.brand,
-  colorEmpty = colors.brandLight
+  colorEmpty = colors.brandLight,
 }) => {
   return (
     <div
@@ -26,9 +26,9 @@ export const Loading = ({
         height: size,
         borderWidth: borderSize,
         borderColor: colorFilled,
-        borderLeftColor: colorEmpty
+        borderLeftColor: colorEmpty,
       }}
-      className={classnames("loading-spinner", moduleCss.loader)}
+      className={classnames('loading-spinner', moduleCss.loader)}
     />
   );
 };

@@ -66,7 +66,7 @@ module.exports = withAll({
     });
 
     // webpack should ignore all the auto-generated css definition files
-    config.plugins.push(new webpack.WatchIgnorePlugin([/css\.d\.ts$/]));
+    config.plugins.push(new webpack.WatchIgnorePlugin([/s?[ac]ss\.d\.ts$/]));
 
     return config;
   },
