@@ -5,6 +5,7 @@ import { useRouter } from 'src/lib';
 import { Loading } from 'src/components/_lib_';
 import moduleCss from './index.module.scss';
 import styled from 'styled-components';
+import { Box, Heading } from 'grommet';
 
 const Page = () => {
   const { query, asPath } = useRouter();
@@ -12,7 +13,8 @@ const Page = () => {
   return (
     <MainLayout>
       <Loading />
-      <div className={moduleCss.header}>Howdy</div>
+      <Box className={moduleCss.header}>Howdy</Box>
+      <Heading className={moduleCss.header}>Hi</Heading>
       {Object.keys(query).length ? JSON.stringify(query) : null}
       {asPath}
     </MainLayout>
