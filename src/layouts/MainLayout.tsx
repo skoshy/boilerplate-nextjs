@@ -1,16 +1,29 @@
 import React from 'react';
+import Head from 'next/head';
 import { Grommet, Box } from 'grommet';
 import styled from 'styled-components';
 import { grommetTheme } from 'src/styles';
 
 interface Props {
+  pageTitle?: string;
   children?: any;
   className?: string;
 }
 
-const UnstyledMainLayout = ({ children, className = '' }: Props) => (
+const UnstyledMainLayout = ({
+  pageTitle = '',
+  children,
+  className = '',
+}: Props) => (
   <Grommet theme={grommetTheme}>
-    <Box gap="medium" className={`layout main ${className}`}>
+    <Head>
+      <title>{pageTitle}</title>
+      <link
+        href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap"
+        rel="stylesheet"
+      />
+    </Head>
+    <Box gap="medium" className={`layout main-layout ${className}`}>
       {children}
     </Box>
   </Grommet>
