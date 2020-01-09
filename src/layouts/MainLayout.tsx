@@ -1,20 +1,19 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import { Grommet, Box } from 'grommet';
+import styled from 'styled-components';
+import { grommetTheme } from 'src/styles';
 
 interface Props {
   children?: any;
   className?: string;
 }
 
-const UnstyledMainLayout = ({ children, className = "" }: Props) => (
-  <div
-    css={`
-      border: 1px solid black;
-    `}
-    className={`layout main ${className}`}
-  >
-    {children}
-  </div>
+const UnstyledMainLayout = ({ children, className = '' }: Props) => (
+  <Grommet theme={grommetTheme}>
+    <Box gap="medium" className={`layout main ${className}`}>
+      {children}
+    </Box>
+  </Grommet>
 );
 
 export default styled(UnstyledMainLayout)`

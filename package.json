@@ -12,6 +12,7 @@
     "gulp": "env-cmd gulp",
     "lint": "eslint",
     "lint:errors": "eslint \"src/**/*.tsx\" \"src/**/*.ts\" \"src/**/*.jsx\" \"src/**/*.js\" --quiet --no-error-on-unmatched-pattern",
+    "prettier": "prettier",
     "postinstall": "gulp postInstall --silent"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
     "classnames": "2.2.6",
+    "grommet": "2.9.0",
     "lodash": "4.17.15",
     "next": "9.1.7",
     "node-sass": "4.13.0",
