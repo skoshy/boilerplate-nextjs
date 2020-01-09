@@ -8,5 +8,6 @@ export const spawnDefaultOptions = {
 export const spawn = (cmd, params = [], options = spawnDefaultOptions) =>
   npmRunSpawn(cmd, params, options);
 
+export * from "./createGulpTask";
 export * from "./port";
 export * from "./question";
