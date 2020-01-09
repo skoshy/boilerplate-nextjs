@@ -1,17 +1,17 @@
 module.exports = {
-  presets: ["next/babel"],
+  presets: ['next/babel'],
   plugins: [
     [
-      "babel-plugin-styled-components",
+      'babel-plugin-styled-components',
       {
-        ssr: true
-      }
+        ssr: true,
+      },
     ],
     [
-      "babel-plugin-root-import",
+      'babel-plugin-root-import',
       {
-        rootPathPrefix: ""
-      }
-    ]
-  ]
+        rootPathPrefix: '',
+      },
+    ],
+  ],
 };

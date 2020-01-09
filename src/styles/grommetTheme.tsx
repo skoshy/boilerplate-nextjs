@@ -1,4 +1,4 @@
-import { ThemeType } from 'grommet';
+import { ThemeType } from 'grommet'; // eslint-disable-line import/named
 import { colors } from './colors';
 
 export const grommetTheme: ThemeType = {
