@@ -1,5 +1,5 @@
-import Net from "net";
-import { question } from "./question";
+import Net from 'net';
+import { question } from './question';
 
 const MAX_PORT = 65535;
 
@@ -7,11 +7,11 @@ const MAX_PORT = 65535;
 export const isPortAvailable = port =>
   new Promise((resolve, reject) => {
     const tester = Net.createServer()
-      .once("error", err =>
-        err.code == "EADDRINUSE" ? resolve(false) : reject(err)
+      .once('error', err =>
+        err.code == 'EADDRINUSE' ? resolve(false) : reject(err)
       )
-      .once("listening", () =>
-        tester.once("close", () => resolve(true)).close()
+      .once('listening', () =>
+        tester.once('close', () => resolve(true)).close()
       )
       .listen(port);
   });
@@ -32,13 +32,13 @@ export const getPort = async startingPort => {
       );
 
       // if users says no, abort
-      if (["n", "no"].includes(answer.toLowerCase())) throw new Error();
+      if (['n', 'no'].includes(answer.toLowerCase())) throw new Error();
     } catch (e) {
-      throw new Error("Port could not be binded to");
+      throw new Error('Port could not be binded to');
     }
   }
 
-  if (port > MAX_PORT) throw new Error("Port out of range");
+  if (port > MAX_PORT) throw new Error('Port out of range');
 
   return port;
 };

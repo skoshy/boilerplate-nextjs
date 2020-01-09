@@ -7,7 +7,7 @@
 export const createGulpTask = (...args) => {
   const params = {
     gulpFunc: undefined,
-    options: {}
+    options: {},
   };
 
   if (args.length === 1) params.gulpFunc = args[0];

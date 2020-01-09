@@ -1,3 +1,3 @@
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export { classnames };

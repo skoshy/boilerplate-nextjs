@@ -1,17 +1,17 @@
-import { cp, rm } from "shelljs";
-import { spawn, getPort, createGulpTask } from "./scripts/lib";
+import { cp, rm } from 'shelljs';
+import { spawn, getPort, createGulpTask } from './scripts/lib';
 
-exports.dev = createGulpTask({ description: "Run dev server" }, async end => {
+exports.dev = createGulpTask({ description: 'Run dev server' }, async end => {
   // get an open port
   process.env.PORT = await getPort(process.env.PORT);
 
-  spawn("node server.js");
+  spawn('node server.js');
 
   end();
 });
 
 exports.serve = createGulpTask(
-  { description: "Serves the content created from `build`" },
+  { description: 'Serves the content created from `build`' },
   async end => {
     // get an open port
     process.env.SERVE_PORT = await getPort(process.env.SERVE_PORT);
@@ -24,12 +24,12 @@ exports.serve = createGulpTask(
 );
 
 exports.build = createGulpTask(
-  { description: "Builds the site for both SSR and static site serving" },
+  { description: 'Builds the site for both SSR and static site serving' },
   end => {
     // delete previous build directories
-    rm("-rf", ".next", "out");
+    rm('-rf', '.next', 'out');
 
-    spawn("NODE_ENV=production next build && next export");
+    spawn('NODE_ENV=production next build && next export');
 
     end();
   }
@@ -38,11 +38,11 @@ exports.build = createGulpTask(
 // this script must be idempotent, see `postinstall-postinstall` for more info
 exports.postInstall = createGulpTask(
   {
-    description: "Auto-runs after `yarn install`s and `remove`s"
+    description: 'Auto-runs after `yarn install`s and `remove`s',
   },
   end => {
     // Create default .env if it doesn't exist
-    cp("-n", ".env.example", ".env");
+    cp('-n', '.env.example', '.env');
 
     end();
   }
@@ -59,19 +59,19 @@ exports.default = createGulpTask(async end => {
   );
 
   Object.keys(exports).forEach(key => {
-    if (key === "default") return; // skip default export
+    if (key === 'default') return; // skip default export
     const exp = exports[key];
 
     const paddedKey = exp.description
-      ? (key + " ".repeat(longestKeyLength)).slice(0, longestKeyLength)
+      ? (key + ' '.repeat(longestKeyLength)).slice(0, longestKeyLength)
       : key;
 
     console.log(
-      `yarn ${paddedKey}${exp.description ? ` ==> ${exp.description}` : ""}`
+      `yarn ${paddedKey}${exp.description ? ` ==> ${exp.description}` : ''}`
     );
   });
 
-  console.log("\n");
+  console.log('\n');
 
   end();
 });
