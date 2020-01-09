@@ -89,3 +89,9 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
   - For example, if you have a `generateRandomHexColor` function, it's pretty generic and not tied specifically to the project, so it'd go in _lib_.
 
     If you have a `convertDateToApiFormat` function, it's tied to the project specifically, so it'd go in _helpers_.
+
+  These same rules apply to `_lib_` and `_helpers_` components in the `components` folder.
+
+  - `_lib_` - components that are very generic and aren't tied to functionality in the app itself
+  - `_helpers_` - shared components throughout app only relevant in this project
+  - `_pages_` - these are components specifically tied to a page / set of pages in the app
