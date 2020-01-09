@@ -11,7 +11,7 @@
     "test": "jest src/*",
     "gulp": "env-cmd gulp",
     "lint": "eslint",
-    "lint-errors": "eslint \"src/**/*.tsx\" \"src/**/*.ts\" \"src/**/*.jsx\" \"src/**/*.js\" --quiet",
+    "lint:errors": "eslint \"src/**/*.tsx\" \"src/**/*.ts\" \"src/**/*.jsx\" \"src/**/*.js\" --quiet --no-error-on-unmatched-pattern",
     "postinstall": "gulp postInstall --silent"
   },
   "dependencies": {
