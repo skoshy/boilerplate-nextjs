@@ -1,20 +1,21 @@
 import React from "react";
-import { useRouter } from "next/router";
 import MainLayout from "src/layouts/MainLayout";
-import { withCss } from "src/lib/withCss";
 import "src/styles/global.scss";
-import css from "./index.module.scss";
+import { useRouter } from "src/lib";
+import { Loading } from "src/components/_lib_";
+import moduleCss from "./index.module.scss";
+import styled from "styled-components";
 
 const Page = () => {
-  const router = useRouter();
-  const query = router?.query ?? {};
+  const { query, asPath } = useRouter();
 
   return (
     <MainLayout>
-      <div className={css.header}>Howdy</div>
+      <Loading /> <div className={moduleCss.header}>Howdy</div>
       {Object.keys(query).length ? JSON.stringify(query) : null}
+      {asPath}
     </MainLayout>
   );
 };
 
-export default withCss(Page, css => css``);
+export default styled(Page)``;

@@ -55,15 +55,20 @@ module.exports = {
       {
         paths: [
           {
-            name: "query-string",
-            importNames: ["default"],
-            message: "Use useQueryParams instead from `lib`"
-          },
-          {
             name: "react-redux",
             importNames: ["useSelector", "useDispatch", "useStore"],
             message:
-              "Use the selectors from `lib/useRedux` or `helpers/*/useSelector` instead"
+              "Use the selectors from `src/lib` or `src/helpers/*/useSelector` instead"
+          },
+          {
+            name: "next/router",
+            importNames: ["useRouter"],
+            message: "Use `src/lib:useRouter` instead"
+          }
+          {
+            name: "classnames",
+            importNames: ["default"],
+            message: "Use `src/lib:classnames` instead"
           },
           {
             name: "shelljs",
@@ -74,10 +79,18 @@ module.exports = {
             name: "npm-run",
             importNames: ["spawn"],
             message: "Use `scripts/lib:spawn` instead"
-          }
+          },
         ],
         patterns: [
-          "src/types/*" // types should only be imported from `src/types`
+          "src/types/*", // types should only be imported from `src/types`
+          "src/lib/*", // lib funcs should only be imported from `src/lib`
+          "src/components/_lib_/*", // _lib_ components should only be imported from `src/components/_lib_`
+
+          // styles should only be imported from `src/styles`, except for .s?[ac]ss files
+          "src/styles/*",
+          "!src/styles/**/*.scss",
+          "!src/styles/**/*.sass",
+          "!src/styles/**/*.css"
         ]
       }
     ],
