@@ -1,5 +1,6 @@
 import React from 'react';
 import NextLink, { LinkProps } from 'next/link'; // eslint-disable-line no-restricted-imports
+import { Anchor } from 'grommet';
 
 interface Props extends React.PropsWithChildren<LinkProps> {
   wrapWithAnchor?: boolean;
@@ -19,9 +20,9 @@ export const Link = ({
   return (
     <NextLink href={href} {...props}>
       {wrapWithAnchor ? (
-        <a href={href as string} {...anchorProps}>
+        <Anchor href={href as string} {...anchorProps}>
           {children}
-        </a>
+        </Anchor>
       ) : (
         children
       )}

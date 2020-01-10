@@ -27,16 +27,19 @@ const UnstyledMainLayout = ({
         rel="stylesheet"
       />
     </Head>
-    <Box gap="medium" className={`layout main-layout ${className}`} {...props}>
+    <Box
+      border
+      gap="medium"
+      className={`layout main-layout ${className}`}
+      {...props}
+    >
       {children}
     </Box>
   </Grommet>
 );
 
 export default styled(UnstyledMainLayout)`
-  background: yellow;
-  border: 1px solid #eee;
-  box-shadow: 0px 0px 10px #ddd;
+  box-shadow: 0px 0px 5px #dedede;
   padding: 2rem;
   margin-top: 2rem;
   margin-left: 2rem;

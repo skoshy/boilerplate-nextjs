@@ -4,6 +4,7 @@ import { Text } from 'grommet';
 import MainLayout from 'src/layouts/MainLayout';
 import { Loading, Link } from 'src/components/_lib_';
 import { redirectToExample } from 'src/helpers/root';
+import { colors } from 'src/styles';
 
 /* Use this as your starting point for your app! */
 
@@ -27,5 +28,5 @@ const Page = ({ className }) => {
 export default styled(Page)`
   /* You can put your styling here! */
 
-  background: lightblue;
+  background: ${colors.brandLightest};
 `;
