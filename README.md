@@ -101,3 +101,20 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
   - `_lib_` - components that are very generic and aren't tied to functionality in the app itself
   - `_helpers_` - shared components throughout app only relevant in this project
   - `_pages_` - these are components specifically tied to a page / set of pages in the app
+
+# Deployment
+
+The repo comes baked with Github actions support that'll automatically deploy your site to Netlify for you.
+
+Here's what you have to do to enable this:
+
+- Login to Netlify
+- Add your repo as a site to Netlify
+- Configure the build/publish details
+  - Build command: `gulp build`
+  - Publish directory: `out/`
+- Set your production branch to `auto-netlify`
+- Now go to your user settings and generate a personal token. Name it something related to the project you're making and copy the token.
+- In your Github repo, add a new secret with name `NETLIFY_AUTH_TOKEN`. The URL to do this is https://github.com/skoshy/boilerplate-nextjs/settings/secrets/new - substitute your username and repo.
+- In Netlify, find your site's API ID (try checking https://app.netlify.com/sites/boilerplate-nextjs/settings/general, substitute appropriately). You must put this as a secret in Github like above with name `NETLIFY_SITE_ID`.
+- That should be it! Now every time your code is pushed to master, it should auto-deploy to Netlify!
