@@ -1,16 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
-import { Grommet, Box } from 'grommet';
+import { Grommet, Grid, GridProps } from 'grommet';
 import styled from 'styled-components';
-import { grommetTheme } from 'src/styles';
+import { grommetTheme, colors } from 'src/styles';
 import { SITE_NAME } from 'src/constants';
 import 'src/styles/global.scss';
 
-interface Props {
+type GridTypes = GridProps & JSX.IntrinsicElements['div'];
+interface Props extends GridTypes {
   pageTitle?: string;
   children?: any;
   className?: string;
-  [key: string]: any;
 }
 
 const UnstyledMainLayout = ({
@@ -28,14 +28,10 @@ const UnstyledMainLayout = ({
       />
       <link rel="shortcut icon" href="/favicon.ico" />
     </Head>
-    <Box
-      border
-      gap="medium"
-      className={`layout main-layout ${className}`}
-      {...props}
-    >
+
+    <Grid gap="medium" className={`layout main-layout ${className}`} {...props}>
       {children}
-    </Box>
+    </Grid>
   </Grommet>
 );
 
@@ -46,4 +42,5 @@ export default styled(UnstyledMainLayout)`
   margin-left: 2rem;
   margin-right: 2rem;
   height: 100%;
+  border: 1px solid ${colors.brand};
 `;

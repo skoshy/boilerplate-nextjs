@@ -12,8 +12,6 @@
     "**/tmp": true
   },
   "explorerExclude.backup": null,
-  "cSpell.words": [
-    "cssprop"
-  ]
+  "cSpell.words": ["cssprop"]
   // "typescript.validate.enable": false // disabling this gets rid of intellisense
 }
