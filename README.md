@@ -1,6 +1,6 @@
 # boilerplate-nextjs
 
-Boilerplate for Next.js projects, made by [@skoshy](https://github.com/skoshy)
+Boilerplate for Next.js projects, made by **[@skoshy](https://github.com/skoshy)**
 
 See it here: https://boilerplate-nextjs.netlify.com/
 
@@ -8,9 +8,9 @@ Features:
 
 - ⚛️ **[React](https://reactjs.org/)** with **[Next.js](https://nextjs.org/)**
 - 🔷 **[TypeScript](https://www.typescriptlang.org/)** fully supported
-- 💅 **[styled-components](https://www.styled-components.com/)** and **[SASS](https://sass-lang.com/)** support (both global styles and **css modules**, with automatic type generation); **[Grommet](https://github.com/grommet/grommet)** is the underlying component library
+- 💅 **[styled-components](https://www.styled-components.com/)** and **[SASS](https://sass-lang.com/)** (global styles and **[css modules](https://github.com/css-modules/css-modules)** with automatic types); **[Grommet](https://github.com/grommet/grommet)** serves as the underlying component library
 - 🏃‍♂️ **[Gulp](https://gulpjs.com/)** for task-running
-- ✅ **[ESLint](https://eslint.org/)** with typescript-eslint and various plugins and **[Prettier](https://prettier.io/)** for code-styling
+- ✅ **[ESLint](https://eslint.org/)** with **[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)** and various plugins and **[Prettier](https://prettier.io/)** for code-styling
 - 🃏 **[Jest](https://jestjs.io/)** for testing
 - 💻 Full **cross-platform** support between macOS/Linux/Windows
 
