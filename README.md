@@ -4,13 +4,13 @@ Boilerplate for Next.js projects, made by [@skoshy](https://github.com/skoshy)
 
 Features:
 
-- Next.js with React
-- TypeScript
-- SASS support (both global styles and CSS modules)
-- Gulp for task-running
-- ESLint with typescript-eslint and various plugins and Prettier for code-styling
-- Jest for testing
-- Fully cross-platform between macOS/Linux/Windows
+- ⚛️ **React** with **Next.js**
+- 🔷 **TypeScript** fully supported
+- 💅 **styled-components** and **SASS** support (both global styles and **css modules**, with automatic type generation)
+- 🏃‍♂️ **Gulp** for task-running
+- ✅ **ESLint** with typescript-eslint and various plugins and **Prettier** for code-styling
+- 🃏 **Jest** for testing
+- 💻 Fully **cross-platform** between macOS/Linux/Windows
 
 ## Table of Contents
 
@@ -27,16 +27,14 @@ Currently Node 12 is required.
 - It's recommended to install/use [nvm](https://github.com/nvm-sh/nvm) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (Windows) to manage/switch your node versions.
 
 ```bash
-# node 12+ is required
-
-# if you have nvm installed (macOS/Linux), run:
+# 1a) [macOS/Linux] If you have nvm installed, run:
 nvm install
 
-# if you have nvm-windows installed, run in PowerShell:
+# 1b) [Windows] If you have nvm-windows installed, run in PowerShell:
 .\scripts\install-nvm.ps1
 
-# then, it's pretty simple
-yarn
+# 2)  Then, it's pretty simple
+yarn install
 yarn dev
 ```
 
