@@ -71,6 +71,11 @@ module.exports = {
             message: 'Use `next/head:default` instead',
           },
           {
+            name: 'next/link',
+            importNames: ['default'],
+            message: 'Use `src/components/_lib_:Link` instead',
+          },
+          {
             name: 'classnames',
             importNames: ['default'],
             message: 'Use `src/lib:classnames` instead',

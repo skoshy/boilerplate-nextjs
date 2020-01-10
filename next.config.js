@@ -12,6 +12,10 @@ const withAll = config => withCss(withSass(withMDX(config)));
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = withAll({
+  env: {
+    SITE_NAME: process.env.SITE_NAME,
+  },
+
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 2,
