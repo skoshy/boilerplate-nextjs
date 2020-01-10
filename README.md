@@ -2,21 +2,24 @@
 
 Boilerplate for Next.js projects, made by [@skoshy](https://github.com/skoshy)
 
+See it here: https://boilerplate-nextjs.netlify.com/
+
 Features:
 
-- ⚛️ **React** with **Next.js**
-- 🔷 **TypeScript** fully supported
-- 💅 **styled-components** and **SASS** support (both global styles and **css modules**, with automatic type generation)
-- 🏃‍♂️ **Gulp** for task-running
-- ✅ **ESLint** with typescript-eslint and various plugins and **Prettier** for code-styling
-- 🃏 **Jest** for testing
-- 💻 Fully **cross-platform** between macOS/Linux/Windows
+- ⚛️ **[React](https://reactjs.org/)** with **[Next.js](https://nextjs.org/)**
+- 🔷 **[TypeScript](https://www.typescriptlang.org/)** fully supported
+- 💅 **[styled-components](https://www.styled-components.com/)** and **[SASS](https://sass-lang.com/)** support (both global styles and **css modules**, with automatic type generation); **[Grommet](https://github.com/grommet/grommet)** is the underlying component library
+- 🏃‍♂️ **[Gulp](https://gulpjs.com/)** for task-running
+- ✅ **[ESLint](https://eslint.org/)** with typescript-eslint and various plugins and **[Prettier](https://prettier.io/)** for code-styling
+- 🃏 **[Jest](https://jestjs.io/)** for testing
+- 💻 Full **cross-platform** support between macOS/Linux/Windows
 
 ## Table of Contents
 
 - [Building / Running](#build)
 - [Stack / Packages / Tools](#stack)
 - [Definitions](#definitions)
+- [Deployment](#deployment)
 
 <a name="build"></a>
 
@@ -100,19 +103,21 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
   - `_helpers_` - shared components throughout app only relevant in this project
   - `_pages_` - these are components specifically tied to a page / set of pages in the app
 
-# Deployment
+<a name="#deployment"></a>
+
+## Deployment
 
 The repo comes baked with Github actions support that'll automatically deploy your site to Netlify for you.
 
 Here's what you have to do to enable this:
 
-- Login to Netlify
+- Login to [Netlify](https://netlify.com)
 - Add your repo as a site to Netlify
 - Configure the build/publish details
   - Build command: `gulp build`
   - Publish directory: `out/`
-- Set your production branch to `auto-netlify`
-- Now go to your user settings and generate a personal token. Name it something related to the project you're making and copy the token.
+- Set your production branch to `auto-netlify` (not sure if this is necessary, but just in case)
+- Now go to your [user settings in Netlify](https://app.netlify.com/user/applications) and generate a personal token. Name it something related to the project you're making and copy the token.
 - In your Github repo, first enable Github actions for your repo
 - Then in your Github repo, add a new secret with name `NETLIFY_AUTH_TOKEN`. The URL to do this is https://github.com/skoshy/boilerplate-nextjs/settings/secrets/new - substitute your username and repo.
 - In Netlify, find your site's API ID (try checking https://app.netlify.com/sites/boilerplate-nextjs/settings/general, substitute appropriately). You must put this as a secret in Github like above with name `NETLIFY_SITE_ID`.
