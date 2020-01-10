@@ -1,25 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Heading } from 'grommet';
+import { Text } from 'grommet';
 import MainLayout from 'src/layouts/MainLayout';
-import 'src/styles/global.scss';
-import { useRouter } from 'src/lib';
-import { Loading } from 'src/components/_lib_';
+import { Loading, Link } from 'src/components/_lib_';
+import { redirectToExample } from 'src/helpers/root';
 
-const pageTitle = 'Howdy';
+/* Use this as your starting point for your app! */
 
-const Page = () => {
-  const { query, asPath } = useRouter();
+const pageTitle = 'Redirecting...';
+
+const Page = ({ className }) => {
+  /* You can clear all this out and output whatever you'd like for your page */
+  const redirectPath = redirectToExample();
 
   return (
-    <MainLayout pageTitle={pageTitle}>
+    <MainLayout pageTitle={pageTitle} align="center" className={className}>
       <Loading />
-      <Box>Howdy</Box>
-      <Heading>Hi</Heading>
-      {Object.keys(query).length ? JSON.stringify(query) : null}
-      {asPath}
+      <Text>
+        You should be redirecting soon. If not,{' '}
+        <Link href={redirectPath}>click here</Link>.
+      </Text>
     </MainLayout>
   );
 };
 
-export default styled(Page)``;
+export default styled(Page)`
+  /* You can put your styling here! */
+
+  background: lightblue;
+`;
