@@ -27,8 +27,13 @@ Currently Node 12 is required.
 - It's recommended to install/use [nvm](https://github.com/nvm-sh/nvm) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (Windows) to manage/switch your node versions.
 
 ```bash
-# node 12+ is required, if you have nvm, simply run:
+# node 12+ is required
+
+# if you have nvm installed (macOS/Linux), run:
 nvm install
+
+# if you have nvm-windows installed, run in PowerShell:
+.\scripts\install-nvm.ps1
 
 # then, it's pretty simple
 yarn
