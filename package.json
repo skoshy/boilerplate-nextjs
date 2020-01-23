@@ -22,6 +22,7 @@
     "@types/styled-components": "4.4.2",
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
+    "autoprefixer": "9.7.4",
     "classnames": "2.2.6",
     "grommet": "2.9.0",
     "lodash": "4.17.15",
@@ -32,10 +33,12 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "styled-components": "5.0.0-rc.3",
+    "tailwindcss": "1.2.0-canary.5",
     "utility-types": "3.10.0"
   },
   "devDependencies": {
     "@babel/register": "7.7.7",
+    "@fullhuman/postcss-purgecss": "2.0.5",
     "@teamsupercell/typings-for-css-modules-loader": "2.1.0",
     "@types/node": "12.12.17",
     "@types/react": "16.9.17",

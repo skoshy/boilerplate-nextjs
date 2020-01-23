@@ -1,24 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import { Grommet, Grid, GridProps } from 'grommet';
-import styled from 'styled-components';
-import { grommetTheme, colors } from 'src/styles';
+import { Grommet } from 'grommet';
+import { grommetTheme } from 'src/styles';
 import { SITE_NAME } from 'src/constants';
 import 'src/styles/global.scss';
 
-type GridTypes = GridProps & JSX.IntrinsicElements['div'];
-interface Props extends GridTypes {
-  pageTitle?: string;
-  children?: any;
-  className?: string;
-}
-
-const UnstyledMainLayout = ({
-  pageTitle = SITE_NAME,
-  children,
-  className = '',
-  ...props
-}: Props) => (
+const MainLayout = ({ pageTitle = SITE_NAME, children, ...props }) => (
   <Grommet theme={grommetTheme}>
     <Head>
       {<title>{pageTitle ?? ''}</title>}
@@ -29,18 +16,13 @@ const UnstyledMainLayout = ({
       <link rel="shortcut icon" href="/favicon.ico" />
     </Head>
 
-    <Grid gap="medium" className={`layout main-layout ${className}`} {...props}>
+    <div
+      className="grid gap-6 border-blue-400 border shadow-md p-8 m-8 h-full"
+      {...props}
+    >
       {children}
-    </Grid>
+    </div>
   </Grommet>
 );
 
-export default styled(UnstyledMainLayout)`
-  box-shadow: 0px 0px 5px #dedede;
-  padding: 2rem;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  height: 100%;
-  border: 1px solid ${colors.brand};
-`;
+export default MainLayout;

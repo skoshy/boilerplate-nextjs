@@ -1,3 +1,10 @@
+/* purgecss start ignore */
+@tailwind  base;
+@tailwind  components;
+/* purgecss end ignore */
+
+@tailwind  utilities;
+
 * {
   font-family: Muli, Arial, sans-serif;
   box-sizing: border-box;
