@@ -7,9 +7,19 @@ const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 });
 
-const withAll = config => withCss(withSass(withMDX(config)));
-
 const isDev = process.env.NODE_ENV === 'development';
+const isSourceMapsEnabled = !!process.env.ENABLE_SOURCEMAPS;
+
+const withAll = config => {
+  let builtUpConfig = withCss(withSass(withMDX(config)));
+
+  if (isSourceMapsEnabled) {
+    const withSourceMaps = require('@zeit/next-source-maps')();
+    builtUpConfig = withSourceMaps(builtUpConfig);
+  }
+
+  return builtUpConfig;
+};
 
 module.exports = withAll({
   env: {
