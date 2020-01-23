@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Heading, Text, Anchor } from 'grommet';
 import MainLayout from 'src/layouts/MainLayout';
 import { SITE_NAME } from 'src/constants';
@@ -21,10 +20,10 @@ const Page = () => {
     // Fill with gradient
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-  }, []);
+  }, [canvasRef]);
 
   return (
-    <MainLayout pageTitle={pageTitle} gap="small">
+    <MainLayout pageTitle={pageTitle}>
       <Heading>Hi there</Heading>
       <Text>
         This is a boilerplate made by{' '}
@@ -201,14 +200,14 @@ const Page = () => {
             <div>
               <blockquote>
                 <p>
-                  A block quotation (also known as a long quotation or
-                  extract) is a quotation in a written document, that is set
-                  off from the main text as a paragraph, or block of text.
+                  A block quotation (also known as a long quotation or extract)
+                  is a quotation in a written document, that is set off from the
+                  main text as a paragraph, or block of text.
                 </p>
                 <p>
-                  It is typically distinguished visually using indentation and
-                  a different typeface or smaller size quotation. It may or
-                  may not include a citation, usually placed at the bottom.
+                  It is typically distinguished visually using indentation and a
+                  different typeface or smaller size quotation. It may or may
+                  not include a citation, usually placed at the bottom.
                 </p>
                 <cite>
                   <a href="#!">Said no one, ever.</a>
@@ -397,8 +396,8 @@ const Page = () => {
                 <em>This text has added emphasis.</em>
               </p>
               <p>
-                The <b>b element</b> is stylistically different text from
-                normal text, without any special importance.
+                The <b>b element</b> is stylistically different text from normal
+                text, without any special importance.
               </p>
               <p>
                 The <i>i element</i> is text that is offset from the normal
@@ -422,9 +421,7 @@ const Page = () => {
                 Subscript for things like H<sub>2</sub>O.
               </p>
               <p>
-                <small>
-                  This small text is small for for fine print, etc.
-                </small>
+                <small>This small text is small for for fine print, etc.</small>
               </p>
               <p>
                 Abbreviation: {}
@@ -466,8 +463,7 @@ const Page = () => {
             <div>
               <p>There is comment here:</p>
               <p>
-                There is a comment spanning multiple tags and lines below
-                here.
+                There is a comment spanning multiple tags and lines below here.
               </p>
             </div>
             <footer>
@@ -638,11 +634,7 @@ const Page = () => {
               <legend>Input fields</legend>
               <p>
                 <label htmlFor="input__text">Text Input</label>
-                <input
-                  id="input__text"
-                  type="text"
-                  placeholder="Text Input"
-                />
+                <input id="input__text" type="text" placeholder="Text Input" />
               </p>
               <p>
                 <label htmlFor="input__password">Password</label>
@@ -880,11 +872,7 @@ const Page = () => {
                 <input type="submit" defaultValue="<input type=submit>" />
                 <input type="button" defaultValue="<input type=button>" />
                 <input type="reset" defaultValue="<input type=reset>" />
-                <input
-                  type="submit"
-                  defaultValue="<input disabled>"
-                  disabled
-                />
+                <input type="submit" defaultValue="<input disabled>" disabled />
               </p>
               <p>
                 <button type="submit">&lt;button type=submit&gt;</button>
@@ -912,4 +900,4 @@ const Page = () => {
   );
 };
 
-export default styled(Page)``;
+export default Page;

@@ -78,7 +78,12 @@ module.exports = {
           {
             name: 'classnames',
             importNames: ['default'],
-            message: 'Use `src/lib:classnames` instead',
+            message: 'Use `src/lib:cc` instead',
+          },
+          {
+            name: 'classcat',
+            importNames: ['default'],
+            message: 'Use `src/lib:cc` instead',
           },
           {
             name: 'shelljs',

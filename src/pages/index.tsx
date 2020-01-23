@@ -1,21 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Text } from 'grommet';
 import MainLayout from 'src/layouts/MainLayout';
 import { Loading, Link } from 'src/components/_lib_';
 import { redirectToExample } from 'src/helpers/root';
-import { colors } from 'src/styles';
 
 /* Use this as your starting point for your app! */
 
 const pageTitle = 'Redirecting...';
 
-const Page = ({ className }) => {
+const Page = () => {
   /* You can clear all this out and output whatever you'd like for your page */
   const redirectPath = redirectToExample();
 
   return (
-    <MainLayout pageTitle={pageTitle} align="center" className={className}>
+    <MainLayout
+      pageTitle={pageTitle}
+      className={'justify-items-center justify-center'}
+    >
       <Loading />
       <Text>
         You should be redirecting soon. If not,{' '}
@@ -25,8 +26,4 @@ const Page = ({ className }) => {
   );
 };
 
-export default styled(Page)`
-  /* You can put your styling here! */
-
-  background: ${colors.brandLightest};
-`;
+export default Page;
