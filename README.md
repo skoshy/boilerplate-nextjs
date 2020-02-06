@@ -1,4 +1,5 @@
 # boilerplate-nextjs
+![Build and deploy badge](https://github.com/skoshy/boilerplate-nextjs/workflows/Build%20and%20deploy/badge.svg?branch=master)
 
 Boilerplate for Next.js projects, made by **[@skoshy](https://github.com/skoshy)**
 
