@@ -1,4 +1,5 @@
 # boilerplate-nextjs
+
 ![Build and deploy badge](https://github.com/skoshy/boilerplate-nextjs/workflows/Build%20and%20deploy/badge.svg?branch=master)
 
 Boilerplate for Next.js projects, made by **[@skoshy](https://github.com/skoshy)**
@@ -59,7 +60,6 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 - **`.env.example`** - Example environment variable file, automatically gets used as default `.env`
 - **`.npmrc`** - Ensure we use exact versions when adding things to `package.json`
 - **`.nvmrc`** - Define the recommended node version
-- **`package-lock.json`** - Broken JSON file. This is kept in the repo to force an error when using `npm`, so the developer knows to use `yarn` instead.
 
 ### Dependencies
 
