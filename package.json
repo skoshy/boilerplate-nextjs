@@ -4,15 +4,16 @@
   "repository": "git@github.com:skoshy/boilerplate-nextjs.git",
   "author": "Stefan Koshy <noreply@skoshy.com>",
   "scripts": {
-    "start": "env-cmd gulp dev",
+    "start": "env-cmd gulp start",
     "dev": "env-cmd gulp dev",
     "build": "env-cmd gulp build",
-    "serve": "env-cmd gulp serve",
+    "httpServe": "env-cmd gulp httpServe",
     "test": "jest src/*",
     "gulp": "env-cmd gulp",
     "lint": "eslint",
     "lint:errors": "eslint \"src/**/*.tsx\" \"src/**/*.ts\" \"src/**/*.jsx\" \"src/**/*.js\" --quiet --no-error-on-unmatched-pattern",
     "prettier": "prettier",
+    "docker:start": "docker-compose build && docker-compose up",
     "postinstall": "gulp postInstall --silent"
   },
   "dependencies": {

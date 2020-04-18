@@ -10,7 +10,7 @@ exports.dev = createGulpTask({ description: 'Run dev server' }, async end => {
   end();
 });
 
-exports.serve = createGulpTask(
+exports.httpServe = createGulpTask(
   { description: 'Serves the content created from `build`' },
   async end => {
     // get an open port
@@ -18,6 +18,19 @@ exports.serve = createGulpTask(
 
     // starts a server for a static site
     spawn(`NODE_ENV=production http-serve ./out -p ${process.env.SERVE_PORT}`); // use `node server.js` to start the SSR server
+
+    end();
+  }
+);
+
+exports.start = createGulpTask(
+  { description: 'Serves the content created from `build`' },
+  async end => {
+    // get an open port
+    process.env.SERVE_PORT = await getPort(process.env.SERVE_PORT);
+
+    // starts a server for a static site
+    spawn(`NODE_ENV=production next start ${process.env.SERVE_PORT}`); // use `node server.js` to start the SSR server
 
     end();
   }
