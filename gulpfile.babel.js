@@ -1,31 +1,31 @@
-import { cp, rm } from 'shelljs';
-import { spawn, getPort, createGulpTask } from './scripts/lib';
+import { cp, rm } from "shelljs";
+import { spawn, getPort, createGulpTask } from "./scripts/lib";
 
-exports.dev = createGulpTask({ description: 'Run dev server' }, async end => {
+exports.dev = createGulpTask({ description: "Run dev server" }, async (end) => {
   // get an open port
   process.env.PORT = await getPort(process.env.PORT);
 
-  spawn('node server.js');
+  spawn("node server.js");
 
   end();
 });
 
 exports.httpServe = createGulpTask(
-  { description: 'Serves the content created from `build`' },
-  async end => {
+  { description: "Serves the content created from `out`, for static sites" },
+  async (end) => {
     // get an open port
     process.env.SERVE_PORT = await getPort(process.env.SERVE_PORT);
 
     // starts a server for a static site
-    spawn(`NODE_ENV=production http-serve ./out -p ${process.env.SERVE_PORT}`); // use `node server.js` to start the SSR server
+    spawn(`NODE_ENV=production http-serve ./out -p ${process.env.SERVE_PORT}`);
 
     end();
   }
 );
 
 exports.start = createGulpTask(
-  { description: 'Serves the content created from `build`' },
-  async end => {
+  { description: "Serves the content created from `build`, for SSR sites" },
+  async (end) => {
     // get an open port
     process.env.SERVE_PORT = await getPort(process.env.SERVE_PORT);
 
@@ -37,12 +37,12 @@ exports.start = createGulpTask(
 );
 
 exports.build = createGulpTask(
-  { description: 'Builds the site for both SSR and static site serving' },
-  end => {
+  { description: "Builds the site for both SSR and static site serving" },
+  (end) => {
     // delete previous build directories
-    rm('-rf', '.next', 'out');
+    rm("-rf", ".next", "out");
 
-    spawn('NODE_ENV=production next build && next export');
+    spawn("NODE_ENV=production next build && next export");
 
     end();
   }
@@ -51,18 +51,18 @@ exports.build = createGulpTask(
 // this script must be idempotent, see `postinstall-postinstall` for more info
 exports.postInstall = createGulpTask(
   {
-    description: 'Auto-runs after `yarn install`s and `remove`s',
+    description: "Auto-runs after `yarn install`s and `remove`s",
   },
-  end => {
+  (end) => {
     // Create default .env if it doesn't exist
-    cp('-n', '.env.example', '.env');
+    cp("-n", ".env.example", ".env");
 
     end();
   }
 );
 
 // Keep this at the end of the exports
-exports.default = createGulpTask(async end => {
+exports.default = createGulpTask(async (end) => {
   console.log(`\n\nHi! Here are some commands you can run:\n`);
 
   const exportKeys = Object.keys(exports);
@@ -71,20 +71,23 @@ exports.default = createGulpTask(async end => {
     0
   );
 
-  Object.keys(exports).forEach(key => {
-    if (key === 'default') return; // skip default export
+  Object.keys(exports).forEach((key) => {
+    if (["default", "help"].includes(key)) return; // skip default export
+
     const exp = exports[key];
 
     const paddedKey = exp.description
-      ? (key + ' '.repeat(longestKeyLength)).slice(0, longestKeyLength)
+      ? (key + " ".repeat(longestKeyLength)).slice(0, longestKeyLength)
       : key;
 
     console.log(
-      `yarn ${paddedKey}${exp.description ? ` ==> ${exp.description}` : ''}`
+      `yarn ${paddedKey}${exp.description ? ` ==> ${exp.description}` : ""}`
     );
   });
 
-  console.log('\n');
+  console.log("\n");
 
   end();
 });
+
+exports.help = (...params) => exports.default(...params);
