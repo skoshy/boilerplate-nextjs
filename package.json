@@ -4,6 +4,7 @@
   "repository": "git@github.com:skoshy/boilerplate-nextjs.git",
   "author": "Stefan Koshy <noreply@skoshy.com>",
   "scripts": {
+    "help": "env-cmd gulp help",
     "start": "env-cmd gulp start",
     "dev": "env-cmd gulp dev",
     "build": "env-cmd gulp build",
@@ -17,9 +18,6 @@
     "postinstall": "gulp postInstall --silent"
   },
   "dependencies": {
-    "@mdx-js/loader": "1.5.8",
-    "@mdx-js/react": "1.5.8",
-    "@next/mdx": "9.3.5",
     "@types/styled-components": "5.1.0",
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
