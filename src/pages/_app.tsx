@@ -6,11 +6,6 @@ import React from "react";
 // import { FormActions } from 'src/containers/FormReducer';
 import MainLayout from "src/layouts/MainLayout";
 
-// if (process.env.NODE_ENV !== 'production') {
-//   const whyDidYouRender = require('@welldone-software/why-did-you-render'); // eslint-disable-line
-//   whyDidYouRender(React);
-// }
-
 const App = ({ Component, pageProps }) => {
   // const { dispatch } = useRedux();
 
