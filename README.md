@@ -63,7 +63,6 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 
 ### Dependencies
 
-- **`@next/mdx`/`@mdx-js/loader`** - Allows for using `.md` and `.mdx` pages
 - **`@zeit/next-sass`** - Needed for SASS support with Next.js
 - **`lodash`** - Helper functions for common JS problems
 - **`next`** - Meta-framework
