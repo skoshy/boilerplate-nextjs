@@ -63,19 +63,17 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 
 ### Dependencies
 
-- **`@zeit/next-sass`** - Needed for SASS support with Next.js
 - **`lodash`** - Helper functions for common JS problems
 - **`next`** - Meta-framework
-- **`node-sass`** - Needed for SASS support
 - **`postinstall-postinstall`** - Runs `postinstall` scripts on script removal as well. See [`postinstall-postinstall`](https://www.npmjs.com/package/postinstall-postinstall) or [`patch-package`](https://www.npmjs.com/package/patch-package) for more info
 - **`react`/`react-dom`** - ⚛️
+- **`sass`** - needed for SASS support in Next
 - **`styled-components`** - robust CSS-in-JS solution
 - **`utility-types`** - Has a lot of helper functions and utils for TypeScript
 
 ### Dev Dependencies
 
 - **`@babel/register`** - For using Babel with Gulp
-- **`@teamsupercell/typings-for-css-modules-loader`** - Automatically generates TS def files for `.scss/sass/css` files. This allows for type-safe importing of module CSS in components.
 - **`@types/react`/`@types/node`** - Required by Next.js to be installed when using TypeScript
 - **`env-cmd`** - Passes `.env` environment variables easily to scripts, cross-platform
 - **`eslint`** - Linter

@@ -1,16 +1,15 @@
-import React from 'react';
-import Head from 'next/head';
-import { Grommet } from 'grommet';
-import { grommetTheme } from 'src/styles';
-import { SITE_NAME } from 'src/constants';
-import 'src/styles/global.scss';
-import { cc } from 'src/lib';
-import { Grid } from 'src/components/_helpers_/Grid';
+import React from "react";
+import Head from "next/head";
+import { Grommet } from "grommet";
+import { grommetTheme } from "src/styles";
+import { SITE_NAME } from "src/constants";
+import { cc } from "src/lib";
+import { Grid } from "src/components/_helpers_/Grid";
 
-const MainLayout = ({ pageTitle = SITE_NAME, children, className = '' }) => (
+const MainLayout = ({ pageTitle = SITE_NAME, children, className = "" }) => (
   <Grommet theme={grommetTheme}>
     <Head>
-      {<title>{pageTitle ?? ''}</title>}
+      {<title>{pageTitle ?? ""}</title>}
       <link
         href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap"
         rel="stylesheet"
@@ -20,7 +19,7 @@ const MainLayout = ({ pageTitle = SITE_NAME, children, className = '' }) => (
 
     <Grid
       className={cc([
-        'border-blue-400 border shadow-md p-8 m-8 h-full',
+        "border-blue-400 border shadow-md p-8 m-8 h-full",
         className,
       ])}
     >

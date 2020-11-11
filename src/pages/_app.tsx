@@ -5,6 +5,7 @@ import React from "react";
 // import { useRedux } from 'src/lib/useRedux';
 // import { FormActions } from 'src/containers/FormReducer';
 import MainLayout from "src/layouts/MainLayout";
+import "src/styles/global.scss";
 
 const App = ({ Component, pageProps }) => {
   // const { dispatch } = useRedux();
