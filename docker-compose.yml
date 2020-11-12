@@ -1,14 +1,12 @@
-version: '3'
+version: "3"
 services:
   web:
-    env_file:
-      - .env
     build: .
     ports:
-      - '${PORT}:${PORT}'
+      - "${PORT}:${PORT}"
     env_file: .env
     volumes:
-      - './:${PATH_MOUNT}'
+      - "./:${PATH_MOUNT}"
     networks:
       - app-network
 networks:
