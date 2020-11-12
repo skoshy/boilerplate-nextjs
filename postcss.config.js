@@ -1,26 +1,21 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const purgecss = require("@fullhuman/postcss-purgecss")({
-  // Specify the paths to all of the template files in your project
-  content: [
-    "./src/**/*.html",
-    "./src/**/*.js",
-    "./src/**/*.jsx",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.vue",
-    // etc.
-  ],
-
-  // Include any special characters you're using in this regular expression
-  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-});
-
 module.exports = {
   plugins: [
-    require("tailwindcss"),
-    require("autoprefixer"),
-    // only include purgecss in prod
-    ...(process.env.NODE_ENV === "production" ? [purgecss] : []),
+    "tailwindcss",
+
+    // below is inherited from Next.js, see
+    // https://nextjs.org/docs/advanced-features/customizing-postcss-config#customizing-plugins
+    "postcss-flexbugs-fixes",
+    [
+      "postcss-preset-env",
+      {
+        autoprefixer: {
+          flexbox: "no-2009",
+        },
+        stage: 3,
+        features: {
+          "custom-properties": false,
+        },
+      },
+    ],
   ],
 };

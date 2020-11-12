@@ -66,6 +66,7 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 - **`lodash`** - Helper functions for common JS problems
 - **`next`** - Meta-framework
 - **`postinstall-postinstall`** - Runs `postinstall` scripts on script removal as well. See [`postinstall-postinstall`](https://www.npmjs.com/package/postinstall-postinstall) or [`patch-package`](https://www.npmjs.com/package/patch-package) for more info
+- **`postcss-flexbugs-fixes/postcss-preset-env`** - We need to manually include these since we override Next's default PostCSS config
 - **`react`/`react-dom`** - ⚛️
 - **`sass`** - needed for SASS support in Next
 - **`styled-components`** - robust CSS-in-JS solution
