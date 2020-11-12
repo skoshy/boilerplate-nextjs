@@ -1,4 +1,4 @@
-import { StyleTypes } from 'src/types';
+import { StyleTypes } from "src/types";
 
 // mark as partial so we can programmatically build up colors
 const sizing = {};

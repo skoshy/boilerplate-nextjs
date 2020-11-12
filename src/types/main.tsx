@@ -1,4 +1,4 @@
 export enum TestEnum {
-  Unset = '',
-  Random = 'Random',
+  Unset = "",
+  Random = "Random",
 }

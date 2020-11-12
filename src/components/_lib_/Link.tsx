@@ -1,6 +1,6 @@
-import React from 'react';
-import NextLink, { LinkProps } from 'next/link'; // eslint-disable-line no-restricted-imports
-import { Anchor } from 'grommet';
+import React from "react";
+import NextLink, { LinkProps } from "next/link"; // eslint-disable-line no-restricted-imports
+import { Anchor } from "grommet";
 
 interface Props extends React.PropsWithChildren<LinkProps> {
   wrapWithAnchor?: boolean;

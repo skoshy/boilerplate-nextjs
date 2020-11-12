@@ -1,7 +1,7 @@
-import React from 'react';
-import { Heading, Text, Anchor } from 'grommet';
-import MainLayout from 'src/layouts/MainLayout';
-import { SITE_NAME } from 'src/constants';
+import React from "react";
+import { Heading, Text, Anchor } from "grommet";
+import MainLayout from "src/layouts/MainLayout";
+import { SITE_NAME } from "src/constants";
 
 const pageTitle = SITE_NAME;
 
@@ -10,12 +10,12 @@ const Page = () => {
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
 
     // Create gradient
     const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grd.addColorStop(0, 'red');
-    grd.addColorStop(1, 'white');
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
 
     // Fill with gradient
     ctx.fillStyle = grd;
@@ -26,7 +26,7 @@ const Page = () => {
     <MainLayout pageTitle={pageTitle}>
       <Heading>Hi there</Heading>
       <Text>
-        This is a boilerplate made by{' '}
+        This is a boilerplate made by{" "}
         <Anchor href="https://github.com/skoshy/">@skoshy</Anchor>
       </Text>
       <Heading level={2}>Why tho?</Heading>
@@ -543,7 +543,7 @@ const Page = () => {
                 src="/static/kitchen-sink/video.mp4"
                 controls={true}
                 style={{
-                  maxWidth: '100%',
+                  maxWidth: "100%",
                 }}
               >
                 video

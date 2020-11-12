@@ -13,7 +13,7 @@
     "gulp": "env-cmd gulp",
     "lint": "eslint",
     "lint:errors": "eslint \"src/**/*.tsx\" \"src/**/*.ts\" \"src/**/*.jsx\" \"src/**/*.js\" --quiet --no-error-on-unmatched-pattern",
-    "prettier": "prettier",
+    "prettier": "prettier . --ignore-path .gitignore --write",
     "docker:start": "docker-compose build && docker-compose up",
     "postinstall": "gulp postInstall --silent"
   },

@@ -1,7 +1,7 @@
-import Readline from 'readline';
+import Readline from "readline";
 
 // used from https://stackoverflow.com/a/53981240/506913
-export const question = q => {
+export const question = (q) => {
   let response;
 
   const rl = Readline.createInterface({
@@ -13,12 +13,12 @@ export const question = q => {
   rl.prompt();
 
   return new Promise((resolve, reject) => {
-    rl.on('line', userInput => {
+    rl.on("line", (userInput) => {
       response = userInput;
       rl.close();
     });
 
-    rl.on('close', () => {
+    rl.on("close", () => {
       resolve(response);
     });
   });

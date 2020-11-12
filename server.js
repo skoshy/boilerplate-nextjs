@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const http = require('http');
-const https = require('https');
-const { parse } = require('url');
-const { readFileSync } = require('fs');
-const next = require('next');
+const http = require("http");
+const https = require("https");
+const { parse } = require("url");
+const { readFileSync } = require("fs");
+const next = require("next");
 
 const host = process.env.HOST;
 const port = process.env.PORT;
 
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.NODE_ENV !== "production";
 
 const app = next({ dev: isDev });
 const handle = app.getRequestHandler();
@@ -38,8 +38,8 @@ if (process.env.SSL_CERT_KEY) {
 }
 
 app.prepare().then(() => {
-  server.createServer(...createServerOptions).listen(port, err => {
+  server.createServer(...createServerOptions).listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http${isSsl ? 's' : ''}://${host}:${port}`);
+    console.log(`> Ready on http${isSsl ? "s" : ""}://${host}:${port}`);
   });
 });
