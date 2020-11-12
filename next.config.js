@@ -21,6 +21,10 @@ module.exports = withAll({
     SITE_NAME: process.env.SITE_NAME,
   },
 
+  // see https://github.com/netlify/next-on-netlify#1-set-nextjs-target-to-serverless
+  // might need to be changed if binaries are need (e.g. something like Prisma)
+  target: "serverless",
+
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 2,

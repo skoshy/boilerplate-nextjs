@@ -15,6 +15,7 @@
     "lint:errors": "eslint \"src/**/*.tsx\" \"src/**/*.ts\" \"src/**/*.jsx\" \"src/**/*.js\" --quiet --no-error-on-unmatched-pattern",
     "prettier": "prettier . --ignore-path .gitignore --write",
     "docker:start": "docker-compose build && docker-compose up",
+    "postbuild": "next-on-netlify",
     "postinstall": "gulp postInstall --silent"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "grommet": "2.12.0",
     "lodash": "4.17.15",
     "next": "10.0.1",
+    "next-on-netlify": "2.6.0",
     "polished": "3.5.1",
     "postcss-flexbugs-fixes": "5.0.1",
     "postcss-preset-env": "6.7.0",

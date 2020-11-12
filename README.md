@@ -65,6 +65,7 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 
 - **`lodash`** - Helper functions for common JS problems
 - **`next`** - Meta-framework
+- **`next-on-netlify`** - Adds full support for Next on Netlify, including SSR. See [next-on-netlify](https://github.com/netlify/next-on-netlify)
 - **`postinstall-postinstall`** - Runs `postinstall` scripts on script removal as well. See [`postinstall-postinstall`](https://www.npmjs.com/package/postinstall-postinstall) or [`patch-package`](https://www.npmjs.com/package/patch-package) for more info
 - **`postcss-flexbugs-fixes/postcss-preset-env`** - We need to manually include these since we override Next's default PostCSS config
 - **`react`/`react-dom`** - ⚛️
