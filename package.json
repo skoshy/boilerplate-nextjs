@@ -36,6 +36,7 @@
     "sass": "1.29.0",
     "styled-components": "5.2.1",
     "tailwindcss": "1.9.6",
+    "twin.macro": "1.12.0",
     "utility-types": "3.10.0"
   },
   "devDependencies": {
@@ -66,5 +67,14 @@
   },
   "engines": {
     "node": ">=12.0.0"
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "styled-components",
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
   }
 }

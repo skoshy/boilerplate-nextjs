@@ -4,6 +4,7 @@ import React from "react";
 // import { store } from 'src/containers/createStore';
 // import { useRedux } from 'src/lib/useRedux';
 // import { FormActions } from 'src/containers/FormReducer';
+import { GlobalStyles as TwinGlobalStyles } from "twin.macro";
 import MainLayout from "src/layouts/MainLayout";
 import "src/styles/global.scss";
 
@@ -22,7 +23,10 @@ class WrappedApp extends NextApp<{ reduxStore }> {
   render() {
     return (
       // <Provider store={store}>
-      <App {...this.props} />
+      <>
+        <TwinGlobalStyles />
+        <App {...this.props} />
+      </>
       // </Provider>
     );
   }

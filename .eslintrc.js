@@ -5,16 +5,17 @@ module.exports = {
     jest: true,
   },
   parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  plugins: ["react-hooks"],
   extends: [
-    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:react-hooks/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
     "plugin:jsdoc/recommended",
+    "prettier", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "prettier/react",
   ],
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -110,11 +111,9 @@ module.exports = {
       },
     ],
     "no-return-assign": ["error", "except-parens"],
-    "no-undef": [0], // turn off this rule because TypeScript does this for us, plus it conflicts with optional chaining working
     "import/no-default-export": [0],
     "react/no-children-prop": [0], // turn this off so it doesn't conflict with things like Grommet's `children` prop
     "@typescript-eslint/explicit-function-return-type": [0], // maybe can turn back on once project is complete?
-    "react/jsx-wrap-multilines": [0],
 
     // JSDoc stuff, let's progressively use JSDoc, not force it on people. typescript should do most of this work
     "jsdoc/require-jsdoc": [0],
@@ -122,6 +121,7 @@ module.exports = {
     "spaced-comment": ["error", "always", { markers: ["/"] }], // prevents errors in *.d.ts files - https://github.com/typescript-eslint/typescript-eslint/issues/600
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off", // no need for react import with new nextjs
   },
   settings: {
     react: {
