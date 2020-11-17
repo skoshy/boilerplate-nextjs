@@ -2,7 +2,7 @@ import 'twin.macro';
 import React from "react";
 import MainLayout from "src/layouts/MainLayout";
 import { cc } from "src/lib";
-import { Grid, Heading, Select, Text, TextInput } from "src/components/_lib_";
+import { Button, Grid, Heading, Select, Text, TextInput } from "src/components/_lib_";
 
 /* Use this as your starting point for your app! */
 
@@ -17,6 +17,8 @@ const Page = ({ className }) => {
       <Grid tw="gap-6 grid-cols-2">
         <Heading level="1">Howdy doody partner</Heading>
         <p>Partner</p>
+        <Button href="http://google.com">button</Button>
+        <Button onClick={() => alert('hi')}>button</Button>
         <TextInput label="hi" footer={"text"} />
         <TextInput label="&shy;" footer="&shy;" />
         <Select />
