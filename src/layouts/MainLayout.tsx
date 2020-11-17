@@ -11,7 +11,7 @@ const MainLayout = ({ pageTitle = SITE_NAME, children, className = "" }) => (
     <Head>
       {<title>{pageTitle ?? ""}</title>}
       <link
-        href="https://fonts.googleapis.com/css?family=Hind+Siliguri:wght@400;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css?family=Karla:wght@400;700&amp;display=swap"
         rel="stylesheet"
       />
       <link rel="shortcut icon" href="/favicon.ico" />
