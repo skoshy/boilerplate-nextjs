@@ -19,6 +19,7 @@
     "postinstall": "gulp postInstall --silent"
   },
   "dependencies": {
+    "@supabase/supabase-js": "1.0.5",
     "@types/styled-components": "5.1.4",
     "@zeit/next-source-maps": "0.0.4-canary.1",
     "classcat": "4.1.0",

@@ -5,6 +5,8 @@ const webpack = require("webpack");
 const isDev = process.env.NODE_ENV === "development";
 const isSourceMapsEnabled = !!process.env.ENABLE_SOURCEMAPS;
 
+const buildEnv = (keys) => keys.reduce((acc, key) => ({ ...acc, key: process.env[key] }), {});
+
 const withAll = (config) => {
   let builtUpConfig = config;
 
@@ -17,9 +19,14 @@ const withAll = (config) => {
 };
 
 module.exports = withAll({
-  env: {
-    SITE_NAME: process.env.SITE_NAME,
-  },
+  publicRuntimeConfig: buildEnv([
+    'SITE_NAME',
+    'SUPABASE_API_URL',
+    'SUPABASE_CLIENT_KEY',
+  ]),
+  serverRuntimeConfig: buildEnv([
+    'SUPABASE_SERVICE_KEY',
+  ]),
 
   // see https://github.com/netlify/next-on-netlify#1-set-nextjs-target-to-serverless
   // might need to be changed if binaries are need (e.g. something like Prisma)
