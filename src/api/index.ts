@@ -1,5 +1,5 @@
 
-import { supabase } from 'src/lib/api/client';
+import { supabase } from 'src/api/client';
 
 export const signUp = async (email, password) => {
   const signUpResponse = await supabase.public.auth.signUp({
