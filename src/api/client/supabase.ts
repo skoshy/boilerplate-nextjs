@@ -4,8 +4,8 @@ import { createClient } from '@supabase/supabase-js';
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export const supabase = (() => {
-  let publicClient = null;
-  let privateClient = null;
+  let publicClient: ReturnType<typeof createClient> = null;
+  let privateClient: ReturnType<typeof createClient> = null;
 
   return {
     get public() {
