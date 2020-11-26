@@ -2,6 +2,7 @@ export * from "./Button";
 export * from "./Grid";
 export * from "./Heading";
 export * from "./Loading";
+export * from "./Modal";
 export * from "./Link";
 export * from "./Select";
 export * from "./Text";

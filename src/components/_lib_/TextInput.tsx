@@ -8,6 +8,7 @@ interface TextInputProps {
   label?: React.ReactNode;
   footer?: React.ReactNode;
   name?: string;
+  value?: string | number;
   onChange?: React.FormEventHandler<HTMLInputElement>;
   containerProps?: React.ComponentPropsWithoutRef<"div">;
   inputProps?: React.ComponentPropsWithoutRef<"input">;
@@ -17,6 +18,7 @@ export const TextInput = ({
   label: _label = null,
   footer: _footer = null,
   name = null,
+  value = undefined,
   onChange = null,
   containerProps = null,
   inputProps = null
@@ -46,6 +48,7 @@ export const TextInput = ({
         name={name}
         onChange={onChange}
         type="text"
+        value={value}
         tw="bg-brand-100 rounded border border-brand-300 focus:border-brand-500 outline-none text-brand-700 py-2 px-2 transition-colors duration-150 ease-in-out"
         {...inputProps}
       />

@@ -4,12 +4,11 @@ import tailwindConfigJson from "tailwind.config.js";
 
 const { publicRuntimeConfig } = getConfig();
 
-interface TailwindConfig {
-  theme: Record<string, any>;
-}
+export const IS_BROWSER = typeof window !== 'undefined';
+export const SITE_NAME = publicRuntimeConfig.SITE_NAME;
 
 export const tailwindConfig = resolveConfig(
   tailwindConfigJson
-) as TailwindConfig;
-
-export const SITE_NAME = publicRuntimeConfig.SITE_NAME;
+) as {
+  theme: Record<string, any>;
+};

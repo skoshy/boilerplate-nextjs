@@ -63,12 +63,15 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
 
 ### Dependencies
 
+- **`autoprefixer`** - Peer dependency of Tailwind
 - **`lodash`** - Helper functions for common JS problems
 - **`next`** - Meta-framework
 - **`next-on-netlify`** - Adds full support for Next on Netlify, including SSR. See [next-on-netlify](https://github.com/netlify/next-on-netlify)
 - **`postinstall-postinstall`** - Runs `postinstall` scripts on script removal as well. See [`postinstall-postinstall`](https://www.npmjs.com/package/postinstall-postinstall) or [`patch-package`](https://www.npmjs.com/package/patch-package) for more info
+- **`postcss`** - Peer dependency of Tailwind
 - **`postcss-flexbugs-fixes/postcss-preset-env`** - We need to manually include these since we override Next's default PostCSS config
 - **`react`/`react-dom`** - ⚛️
+- **`react-modal`** - Accessibility friendly modal, styled by our component library
 - **`sass`** - needed for SASS support in Next
 - **`styled-components`** - robust CSS-in-JS solution
 - **`utility-types`** - Has a lot of helper functions and utils for TypeScript
