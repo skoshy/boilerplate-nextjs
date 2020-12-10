@@ -1,5 +1,6 @@
 import NextApp from "next/app";
 import React from "react";
+import { StoreProvider } from "easy-peasy";
 // import { Provider } from 'react-redux';
 // import { store } from 'src/containers/createStore';
 // import { useRedux } from 'src/lib/useRedux';
@@ -7,6 +8,7 @@ import React from "react";
 import { GlobalStyles as TwinGlobalStyles } from "twin.macro";
 import MainLayout from "src/layouts/MainLayout";
 import "src/styles/global.scss";
+import { store } from "src/models";
 
 const App = ({ Component, pageProps }) => {
   // const { dispatch } = useRedux();
@@ -25,7 +27,9 @@ class WrappedApp extends NextApp<{ reduxStore }> {
       // <Provider store={store}>
       <>
         <TwinGlobalStyles />
-        <App {...this.props} />
+        <StoreProvider store={store}>
+          <App {...this.props} />
+        </StoreProvider>
       </>
       // </Provider>
     );
