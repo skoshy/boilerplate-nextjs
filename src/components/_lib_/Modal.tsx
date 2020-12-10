@@ -56,12 +56,12 @@ export const Modal = styled(_Modal as ModalWithoutExtraProps).attrs(props => ({
   originalClassName: props.className,
 }))`
   .ReactModal__Overlay {
-    ${tw`fixed top-0 left-0 h-screen w-screen bg-white bg-opacity-50 grid justify-items-center items-center opacity-0 transition-opacity ease-in-out`}
+    ${tw`fixed top-0 left-0 h-screen w-screen bg-white bg-opacity-75 grid justify-items-center items-center opacity-0 transition-opacity ease-in-out`}
     transition-duration: ${props => props.closeTimeoutMS}ms;
   }
 
   .ReactModal__Content {
-    ${tw`ease-in-out outline-none`}
+    ${tw`ease-in-out outline-none p-4 bg-white shadow-md`}
   }
 
   .ReactModal__Overlay--after-open{
