@@ -5,7 +5,7 @@ const webpack = require("webpack");
 const isDev = process.env.NODE_ENV === "development";
 const isSourceMapsEnabled = !!process.env.ENABLE_SOURCEMAPS;
 
-const buildEnv = (keys) => keys.reduce((acc, key) => ({ ...acc, key: process.env[key] }), {});
+const buildEnv = (keys) => keys.reduce((acc, key) => ({ ...acc, [key]: process.env[key] }), {});
 
 const withAll = (config) => {
   let builtUpConfig = config;
@@ -19,11 +19,14 @@ const withAll = (config) => {
 };
 
 module.exports = withAll({
-  publicRuntimeConfig: buildEnv([
+  // Public (client-side) env vars go here
+  // Do NOT put private env vars in this `env` key. Put them in `serverRuntimeConfig` instead
+  env: buildEnv([
     'SITE_NAME',
     'SUPABASE_API_URL',
     'SUPABASE_CLIENT_KEY',
   ]),
+  // Private (server-side only) env vars go here
   serverRuntimeConfig: buildEnv([
     'SUPABASE_SERVICE_KEY',
   ]),
