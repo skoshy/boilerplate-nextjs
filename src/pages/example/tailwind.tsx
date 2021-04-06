@@ -2,7 +2,7 @@ import 'twin.macro';
 import { useState } from "react";
 import MainLayout from "src/layouts/MainLayout";
 import { cc } from "src/lib";
-import { Modal, Button, Grid, Heading, Select, TextInput } from "src/components/_lib_";
+import { Modal, Button, Grid, Heading, TextInput } from "src/components/_lib_";
 import { useStoreState, useStoreActions } from 'src/models';
 import { TodosContainer } from 'src/components/TodosContainer';
 
@@ -25,8 +25,8 @@ const Page = ({ className }) => {
     >
       <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)}>
         <Grid>
-          <TextInput value={userName} onChange={e => setUserName(e.target.value)} label="Username" />
-          <TextInput value={password} onChange={e => setPassword(e.target.value)} label="Password" />
+          <TextInput value={userName} onChange={e => setUserName((e.target as HTMLInputElement).value)} label="Username" />
+          <TextInput value={password} onChange={e => setPassword((e.target as HTMLInputElement).value)} label="Password" />
           <Button
             onClick={async () => {
               await logInOrSignUp([userName, password]);

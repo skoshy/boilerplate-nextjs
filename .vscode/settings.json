@@ -6,12 +6,12 @@
     "**/.hg": false,
     "**/CVS": false,
     "**/.DS_Store": true,
-    "**/node_modules": false,
+    "**/node_modules": true,
     "**/bower_components": false,
     "**/.history": true,
     "**/tmp": true
   },
   "explorerExclude.backup": null,
-  "cSpell.words": ["cssprop"]
+  "cSpell.words": ["cssprop", "supabase"]
   // "typescript.validate.enable": false // disabling this gets rid of intellisense
 }

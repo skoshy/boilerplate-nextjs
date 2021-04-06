@@ -21,6 +21,7 @@ Features:
 - [Building / Running](#build)
 - [Stack / Packages / Tools](#stack)
 - [Definitions](#definitions)
+- [Database](#database)
 - [Deployment](#deployment)
 
 <a name="build"></a>
@@ -105,6 +106,34 @@ For SCSS files, you can use `*.module.scss` files for CSS modules, or `*.scss` f
   - `_lib_` - components that are very generic and aren't tied to functionality in the app itself
   - `_helpers_` - shared components throughout app only relevant in this project
   - `_pages_` - these are components specifically tied to a page / set of pages in the app
+
+<a name="#database"></a>
+
+## Database
+
+``sql
+create table todos (
+  id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id uuid references auth.users not null,
+  task text,
+  is_complete boolean default false,
+  inserted_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+alter table todos enable row level security;
+
+create policy "Individuals can create todos." on todos for
+    insert with check (auth.uid() = user_id);
+
+create policy "Individuals can view their own todos. " on todos for
+    select using (auth.uid() = user_id);
+
+create policy "Individuals can update their own todos." on todos for
+    update using (auth.uid() = user_id);
+
+create policy "Individuals can delete their own todos." on todos for
+    delete using (auth.uid() = user_id);
+```
 
 <a name="#deployment"></a>
 
