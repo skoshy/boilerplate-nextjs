@@ -1,5 +1,5 @@
 import { useRef, PropsWithChildren } from 'react';
-import tw, { styled } from 'twin.macro';
+import styled from 'styled-components';
 import ReactModal, { Props as ReactModalProps } from 'react-modal';
 import { IS_BROWSER } from 'src/constants';
 
@@ -56,19 +56,17 @@ export const Modal = styled(_Modal as ModalWithoutExtraProps).attrs(props => ({
   originalClassName: props.className,
 }))`
   .ReactModal__Overlay {
-    ${tw`fixed top-0 left-0 h-screen w-screen bg-white bg-opacity-75 grid justify-items-center items-center opacity-0 transition-opacity ease-in-out`}
     transition-duration: ${props => props.closeTimeoutMS}ms;
   }
 
   .ReactModal__Content {
-    ${tw`ease-in-out outline-none p-4 bg-white shadow-md`}
   }
 
-  .ReactModal__Overlay--after-open{
-    ${tw`opacity-100`}
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
   }
 
-  .ReactModal__Overlay--before-close{
-    ${tw`opacity-0`}
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
   }
 `;

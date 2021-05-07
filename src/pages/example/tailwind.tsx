@@ -1,4 +1,3 @@
-import 'twin.macro';
 import { useState } from "react";
 import MainLayout from "src/layouts/MainLayout";
 import { cc } from "src/lib";
@@ -37,7 +36,7 @@ const Page = ({ className }) => {
           </Button>
         </Grid>
       </Modal>
-      <Grid tw="gap-6">
+      <Grid className="gap-6">
         <Heading level="1">{pageTitle}</Heading>
         {user ? <TodosContainer /> : (
           <Button onClick={() => setIsModalOpen(true)}>Login / Signup</Button>

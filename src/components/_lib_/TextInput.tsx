@@ -1,8 +1,7 @@
-import tw from "twin.macro"; // include when using tw prop
 import { useMemo } from "react";
 import { Grid, Text } from "src/components/_lib_";
 
-const textStyle = tw`text-brand-600`
+const textStyle = `text-brand-600`
 
 interface TextInputProps {
   label?: React.ReactNode;
@@ -33,14 +32,14 @@ export const TextInput = ({
 
   const footer = useMemo(() => {
     if (typeof _footer === 'string') return (
-      <Text css={`${textStyle} ${tw`text-sm`}`}>{_footer}</Text>
+      <Text className={`${textStyle} ${`text-sm`}`}>{_footer}</Text>
     );
 
     return _footer;
   }, [_footer]);
 
   return (
-    <Grid tw="gap-2" {...containerProps}>
+    <Grid className="gap-2" {...containerProps}>
       {label && (<label htmlFor={name}>
         {label}
       </label>)}
@@ -49,7 +48,7 @@ export const TextInput = ({
         onChange={onChange}
         type="text"
         value={value}
-        tw="bg-brand-100 rounded border border-brand-300 focus:border-brand-500 outline-none text-brand-700 py-2 px-2 transition-colors duration-150 ease-in-out"
+        className="bg-brand-100 rounded border border-brand-300 focus:border-brand-500 outline-none text-brand-700 py-2 px-2 transition-colors duration-150 ease-in-out"
         {...inputProps}
       />
       {footer}

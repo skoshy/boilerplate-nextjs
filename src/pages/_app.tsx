@@ -5,7 +5,6 @@ import { StoreProvider } from "easy-peasy";
 // import { store } from 'src/containers/createStore';
 // import { useRedux } from 'src/lib/useRedux';
 // import { FormActions } from 'src/containers/FormReducer';
-import { GlobalStyles as TwinGlobalStyles } from "twin.macro";
 import MainLayout from "src/layouts/MainLayout";
 import "src/styles/global.scss";
 import { store } from "src/models";
@@ -26,7 +25,6 @@ class WrappedApp extends NextApp<{ reduxStore }> {
     return (
       // <Provider store={store}>
       <>
-        <TwinGlobalStyles />
         <StoreProvider store={store}>
           <App {...this.props} />
         </StoreProvider>
